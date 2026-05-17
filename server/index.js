@@ -10,7 +10,7 @@ const orderRoutes   = require("./routes/orders");
 const app = express();
 
 // Middleware
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 
 // Routes
@@ -27,19 +27,13 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Something went wrong" });
 });
 
-// Connect DB and start server
-const { MongoMemoryServer } = require("mongodb-memory-server");
-
+// Connect to real MongoDB Atlas and start server
 async function startServer() {
-  // Creates MongoDB in memory — no installation needed
-  const mongod = await MongoMemoryServer.create();
-  const uri = mongod.getUri();
-  
-  await mongoose.connect(uri);
+  await mongoose.connect(process.env.MONGO_URI);
   console.log("MongoDB connected ✅");
-  
+
   app.listen(process.env.PORT || 5000, () =>
-    console.log(`Server running on port ${process.env.PORT} ✅`)
+    console.log(`Server running on port ${process.env.PORT || 5000} ✅`)
   );
 }
 
