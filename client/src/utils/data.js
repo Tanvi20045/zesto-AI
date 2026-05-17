@@ -22,5 +22,5 @@ export const PRODUCTS = [
   { _id: "9",  name: "Coca-Cola",            category: "Drinks",     price: 40,  mrp: 45,  qty: "750 ml", rating: 4.4, image: "https://images.pexels.com/photos/2668308/pexels-photo-2668308.jpeg" },
   { _id: "10", name: "Chicken Breast",       category: "Meat",       price: 249, mrp: 280, qty: "500 g",  rating: 4.6, image: "https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg" },
   { _id: "11", name: "Cheese Slices",        category: "Dairy",      price: 110, mrp: 125, qty: "200 g",  rating: 4.5, image: "https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg" },
-  { _id: "12", name: "Orange",               category: "Fruits",     price: 80,  mrp: 90,  qty: "4 pcs",  rating: 4.4, image: "https://images.pexels.com/photos/327098/pexels-photo-327098.jpeg" },
+  { _id: "12", name: "Orange", category: "Fruits", price: 80, mrp: 90, qty: "4 pcs", rating: 4.4, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Oranges_and_orange_juice.jpg/320px-Oranges_and_orange_juice.jpg" },
 ];
