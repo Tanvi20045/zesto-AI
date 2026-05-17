@@ -37,7 +37,6 @@ const BANNERS = [
 function HeroSection() {
   const [active, setActive] = useState(0);
 
-  // Auto-rotate banners
   useEffect(() => {
     const timer = setInterval(() => {
       setActive((v) => (v + 1) % BANNERS.length);
@@ -49,8 +48,6 @@ function HeroSection() {
 
   return (
     <section className="max-w-6xl mx-auto px-4 pt-5 pb-2">
-
-      {/* Delivery speed bar */}
       <div className="flex items-center gap-2 mb-4 bg-orange-50 border border-orange-100 rounded-2xl px-4 py-2.5">
         <Zap size={14} className="text-[#ff5722] fill-[#ff5722]" />
         <span className="text-sm font-medium text-gray-700">
@@ -61,24 +58,16 @@ function HeroSection() {
         </span>
       </div>
 
-      {/* Main banner */}
-      <div
-        className={`relative bg-gradient-to-r ${banner.bg} rounded-3xl overflow-hidden h-44 md:h-52 transition-all duration-500`}
-      >
-        {/* Background decoration */}
+      <div className={`relative bg-gradient-to-r ${banner.bg} rounded-3xl overflow-hidden h-44 md:h-52 transition-all duration-500`}>
         <div className={`absolute top-0 right-0 w-64 h-64 ${banner.light} rounded-full translate-x-16 -translate-y-16`} />
         <div className={`absolute bottom-0 left-32 w-32 h-32 ${banner.light} rounded-full translate-y-8`} />
 
-        {/* Content */}
         <div className="relative z-10 flex h-full items-center px-7 justify-between">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-white/70">
               {banner.tag}
             </span>
-            <h2
-              style={{ fontFamily: "Syne, sans-serif" }}
-              className="text-3xl md:text-4xl font-black text-white mt-1 leading-tight"
-            >
+            <h2 style={{ fontFamily: "Syne, sans-serif" }} className="text-3xl md:text-4xl font-black text-white mt-1 leading-tight">
               {banner.title}
             </h2>
             <p className="text-sm text-white/80 mt-1">{banner.subtitle}</p>
@@ -86,11 +75,9 @@ function HeroSection() {
               {banner.cta} →
             </button>
           </div>
-
           <div className="text-7xl md:text-8xl select-none">{banner.emoji}</div>
         </div>
 
-        {/* Dots */}
         <div className="absolute bottom-4 left-7 flex gap-1.5">
           {BANNERS.map((_, i) => (
             <button
@@ -104,23 +91,18 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Mini promo cards */}
       <div className="grid grid-cols-3 gap-3 mt-3">
         {[
-          { emoji: "⚡", label: "10-min delivery",    color: "bg-yellow-50 border-yellow-100" },
-          { emoji: "🔒", label: "100% secure pay",    color: "bg-blue-50 border-blue-100" },
-          { emoji: "↩️", label: "Easy returns",       color: "bg-green-50 border-green-100" },
+          { emoji: "⚡", label: "10-min delivery", color: "bg-yellow-50 border-yellow-100" },
+          { emoji: "🔒", label: "100% secure pay", color: "bg-blue-50 border-blue-100" },
+          { emoji: "↩️", label: "Easy returns", color: "bg-green-50 border-green-100" },
         ].map((item) => (
-          <div
-            key={item.label}
-            className={`${item.color} border rounded-2xl px-3 py-2.5 flex items-center gap-2`}
-          >
+          <div key={item.label} className={`${item.color} border rounded-2xl px-3 py-2.5 flex items-center gap-2`}>
             <span className="text-lg">{item.emoji}</span>
             <span className="text-xs font-medium text-gray-700 leading-tight">{item.label}</span>
           </div>
         ))}
       </div>
-
     </section>
   );
 }
