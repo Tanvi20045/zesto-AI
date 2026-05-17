@@ -2,6 +2,8 @@
 
 A full-stack MERN grocery delivery app (Blinkit/Zepto clone).
 
+LIVE LINK - zesto-ai-git-main-tanvi20045s-projects.vercel.app
+
 ---
 
 ## Project Structure
